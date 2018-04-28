@@ -1,19 +1,12 @@
-#sec1{  
-	margin-top: 20px;
 
+.erro{
+	color: red;
 }
 
-.divs{
-	background-color: #EBEBEB;
+.form-control{
 	border: solid 1px green;
-
-}
-
-input{
-	border: solid 1px green;
+	height: 40px;
 	width: 500px;
-	height: 25px;
-
 }
 
 .radiobutton{
@@ -26,25 +19,9 @@ label{
 	font-style: normal; 
 }
 
-#logo{
-	position: static;
-	width: 216;
-	height: 58;
-}
 
-button{
+#button{
 	background-color: #008000;
-	color: white;
-
-}
-
-#rodape{
-	height: 200px;
-	background-color: black; 
-
-}
-
-h4{
 	color: white;
 
 }

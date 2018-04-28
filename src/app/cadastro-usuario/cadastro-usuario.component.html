@@ -1,84 +1,71 @@
 
+<div class="bckground">
+       <br/>
+    <form #f="ngForm">
+        <!--parte 1-->
+       
+            <div class="form-group">
+                <label for="nome" class="label">Nome</label>
+                <br>
+                <input type="text" class="form-control" pInputText placeholder="Nome Sobrenome" name="nome" [(ngModel)]="usuario.nome"
+				id="nome" required #nome="ngModel">
+            
+                <div class="erro" *ngIf="!nome.valid && nome.touched">Campo Obrigatório!</div>
+            </div>
+            <br>
+            
+            <div class="form-group">
+                <label for="email" class="label">Email</label>
+                <br>
+                <input type="text" class="form-control" pInputText placeholder="seuemail@email.com.br" name="email" [(ngModel)]="usuario.email"
+                id="email" required #email="ngModel"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
 
+                <div class="erro" *ngIf="!email.valid && email.touched">Campo Obrigatório!</div>
 
-<script type="text/javascript">
-	function validar(){
-		if(document.form.nome==""){
-			alert("Formulário Inválido");
-			return false;
-		}
+            </div>
 
-		else if(document.form.email==""){
-			alert("Formulário Inválido");
-			return false;
-		}
+            <br>
 
-		else if(document.form.senha==""){
-			alert("Formulário Inválido");
-			return false;
-		}
-	}
+            <div class="form-group">
+                <label for="senha" class="label">Senha</label>
+                <br>
+                <input type="password" class="form-control" pPassword placeholder="Senha" name="senha" [(ngModel)]="usuario.senha"  
+                strongLabel="Senha Forte" weakLabel="Senha Fraca" mediumLabel="Senha Rasuável" promptLabel="Segurança da Senha" minlength="8"
+                id="senha" required #senha="ngModel">
 
-	function usuarioCadastrado(){
-		alert("Usuário Cadastrado com Sucesso");
-	}
+                <div class="erro" *ngIf="(!senha.valid && senha.touched) ">A Senha deve possuir no mínimo 8 caracteres!</div>
+                
+            </div>
+                <br/>
+            
 
-	function enablearea(){
-		document.getElementById('area').disabled = false;
-	}
-
-	function disabledarea(){
-		document.getElementById('area').disabled = true;
-	}
-
-</script>
-
-<br>
-
-<div class="divs">
-	<section id="sec1">
-		<form name="form" id="form" action="">
-			<label>Nome</label>
-			<br>
-            <input type="text" id="nome" name="nome" maxlength="50" required="true" placeholder="Nome e Sobrenome" [(ngModel)]="usuario.nome"
-            #nome="ngModel">
-			<p></p>
-		
-			<label>Email</label>
-			<br>
-            <input type="email" name="email" required="" placeholder="seuemail@email.com.br" [(ngModel)]="usuario.email"
-            #nome="ngModel">
-			<p></p>
-
-			<label>Senha</label>
-			<br>
-            <input type="password" name="senha" required="" placeholder="8 caracteres" [(ngModel)]="usuario.senha"
-            #senha="ngModel">
-			<p></p>
-
-			<label>Função</label>
-			<br>
-		
-            <p-radioButton name="groupname" value="aluno" label="Aluno" [(ngModel)]="usuario.perfil" 
+        <!--parte 2-->
+        
+            <br/>
+            <p-radioButton class="radiobutton" name="groupname" value="aluno" label="Aluno" [(ngModel)]="usuario.perfil" 
             id="aluno" #aluno="ngModel" (click)="perfil()"></p-radioButton>
             
             <p-radioButton name="groupname" value="professor" label="Professor" [(ngModel)]="usuario.perfil"
-            id="professor"  #professor="ngModel" (click)="perfil()"></p-radioButton>
-			
-			<p></p>
+            id="professor"  #professor="ngModel" (click)="perfil()"></p-radioButton> 
+            
+            <br/>
+            <br/>
+            <span class="ui-float-label">
+                <input pInputText type="text" class="form-control" [disabled]="perfil()=='aluno'">
+				<label for="float-input">Disciplinas</label>
 
-			<label>Área de atuação</label>
-			<br>
-			<input type="text" id="area" placeholder="Informe a Área de Atuação" required="">
-			<p></p>
-
-			<button id="botao" value="botao" (click)="salvar()">Cadastrar</button>
-			<p></p>
-		</form>
-	</section>
+            </span>
+            <br/>
+                   
+        <br/>
+        <!--parte 3-->
+        
+            <button pButton id="button" [disabled]="(!nome.valid || !email.valid || !senha.valid)" (click)="salvar()" class="ui-button-warning" label="Cadastrar"></button>
+            <br/>
+            <br/>
+        
+    </form>
+    
+    <br/>
 </div>
-<p></p>
-
-
-
-
