@@ -1,0 +1,102 @@
+.bckgDetalhesAnuncio{
+    background-color: #EBEBEB;
+    margin: 0px 0px 30px 0px;
+    padding: 20px 20px 20px 10px;
+}
+
+.topoBarra{
+    margin: 30px 0px 0px 0px;
+}
+.topoBarra .icnBarra { 
+    margin-left: 20px;
+    width: 30px;
+    height: 20px;
+    /*clear: left;*/
+}
+
+.topoBarra .barraHoriz{
+    width: 100%;
+    height: 3px;  
+}
+
+.panelAluno{
+    background-color: #1adb44;
+    padding: 20px 0px 0px 40px;
+    height: 260px;
+    border-radius: 5px;
+}
+
+.panelAluno i{
+    margin: 0px 0px 0px 35px;
+    /*color: gray;*/
+}
+
+.panelAluno img{
+    margin: 0px 0px 0px 18px;
+    border-radius: 100px;
+}
+
+.panelAluno h5{
+    margin: 10px 0px 20px 20px;
+}
+
+/*.panelDetailsAnuncio {
+   / margin-bottom: -200px;
+}*/
+
+.panelDetailsAnuncio h5{
+    margin-bottom: -5px;
+    color: green;
+}
+
+.panelListProf{
+    margin-left: 222px;
+}
+
+.panelListProf h5{
+    margin-bottom: -5px;
+    color: green;
+}
+
+.panelDetailsAnuncio h5{
+    margin-bottom: -5px;
+    color: green;
+}
+.panelDetailsAnuncio button{
+    width: 100px;
+}
+
+.backResposta{
+    background-color: #888585;
+    border-radius: 5px;
+    margin-top: 20px; 
+    padding: 10px 0px 0px 20px;
+    height: 150px;
+}
+
+.backResposta h5{
+    color: white;
+}
+
+.tableAnuncioDetalhe, .tableAnuncioP {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.tableAnuncioDetalhe th, .tableAnuncioP th{
+    /*background-color: #cfcfcf;*/
+    background-color: hsl(10%, 40% , 50%);
+    height: 25px;
+    padding: 2px 2px 2px 2px;
+}
+
+.tableAnuncioDetalhe td, .tableAnuncioP td{
+    /*border: 1px solid darkgrey;*/
+    background-color: white;
+    height: 25px;
+}
+
+/*.tableAnuncioP {
+
+}*/

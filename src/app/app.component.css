@@ -1,0 +1,82 @@
+/*Configuração Header*/
+.container{
+    background-color: #E1E1E1;
+}
+
+
+.bckgAuth nav{
+   margin-right: 20px;
+   margin-left: 990px;
+}
+
+.bckgAuth img{
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+ }
+.imgHeader {
+    position: relative;
+    width: 279px;
+    height: 86 px;
+    margin: 10px 50px 10px 30px; 
+}
+
+.principal{
+    position: relative;
+    float: right;
+    margin: 40px 100px;
+}
+
+.principal a{
+    color: #007E00;
+}
+
+nav{
+    margin: 10px 0px 10px 85%;
+}
+
+nav a{
+    color: #007E00;
+}
+/*Configuração Footer*/
+.containerFooter{
+    margin-top: 100px; /*depois remover*/
+    height: 300px;
+    background-color: #363636;
+    color: white;
+}
+
+#textFooter{
+    position: absolute;
+    text-align: justify;
+}
+
+.imgFooter{
+    width: 136px;
+    height: 46px;
+    margin: 10px 0px 10px 60px;
+}
+.containerFooter a {
+   display: block;
+}
+/*Depois poderemos remover esta configuração de css*/
+.containerFooter a:visited{
+    color: white;
+}
+p{
+    width: 200px;
+    margin: 0px 30px 0px 30px;
+}
+
+.linksEmpresa {
+    position: relative;
+    margin: -100px 50px 0px 320px;
+    float: left;  
+}
+
+.linksDiversos {
+    position: relative;
+    margin: -100px 0px 0px 500px ;
+    float: left;
+}
+

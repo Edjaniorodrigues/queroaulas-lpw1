@@ -1,0 +1,68 @@
+<!---->
+<div class="topoBarra">
+  <img class="icnBarra" src="../assets/img/iconeBarra.png"> Detalhes Anúncio
+  <img class="barraHoriz" src="../assets/img/barra_vert.png" />
+</div>
+<!--Painel Detalhes do Anúncio -->
+<div class="bckgDetalhesAnuncio">
+  <!-- Container Superior-->
+  <div class="ui-g">
+    <!-- Painel Esquerdo -->
+    <div class="ui-g-2 panelAluno">
+      <img src="{{ imageURL }}">
+      <h5>{{ name }}</h5>
+      <h5>Perfil: {{ varPerfil }}</h5>
+      <button pButton class="ui-button-warning" routerLink="/anuncio" label="Novo Anúncio"></button>
+    </div>
+    <!--Painel Direito-->
+    <div class="ui-g-10 panelDetailsAnuncio">
+      <h5>
+        <i class="fa fa-th-list" aria-hidden="true"></i> Detalhes do Anúncio:
+      </h5>
+      <img src="../assets/img/barraDivGreen.png">
+      <table class="tableAnuncioDetalhe">
+        <tr>
+          <th>Assunto</th>
+          <th>Categoria / Matéria</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td *ngIf="documentAnuncio != null"> {{ documentAnuncio.assunto }}</td>
+          <td *ngIf="documentAnuncio != null"> {{ documentAnuncio.matSelecionada.nomeMateria }}</td>
+          <td *ngIf="documentAnuncio != null"> Respondida {{ respProf }}</td>
+        </tr>
+      </table>
+    </div>
+    <!--Container Inferior com Detalhes da Resposta do Professor-->
+    <div class="ui-g">
+      <!-- Painel esquerdo vazio-->
+      <div class="ui-g-2"></div>
+      <!-- Painel direito-->
+      <div class="ui-g-10 panelListProf">
+        <h5>
+          <i class="fa fa-list" aria-hidden="true"></i> Professores que aceitaram o anúncio:
+        </h5>
+        <img src="../assets/img/barraDivGreen.png">
+        <!-- Retorna os professores que aceitaram - ou não - o anúncio -->
+        <table class="tableAnuncioDetalhe">
+          <tr>
+            <th>Ranking</th>
+            <th>Nome Professor</th>
+            <th>Valor</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let x of respAnuncioProf">
+            <td *ngIf="x.idAnuncio != documentAnuncio.id">Nenhum professor respondeu!</td>
+            <td *ngIf="x.idAnuncio == documentAnuncio.id">{{ x.id }} </td>
+            <td *ngIf="x.idAnuncio == documentAnuncio.id">
+              <span *ngFor="let y of x.respProf"> {{ y.nomeProf }}</span>
+            </td>
+            <td *ngIf="x.idAnuncio == documentAnuncio.id">
+              <span *ngFor="let y of x.respProf"> {{ y.valorResp }}</span>
+            </td>
+            <td *ngIf="x.idAnuncio == documentAnuncio.id"> button </td>
+          </tr>
+        </table>
+       </div>
+    </div>
+  </div>

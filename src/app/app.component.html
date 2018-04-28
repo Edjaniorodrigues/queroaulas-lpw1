@@ -1,0 +1,53 @@
+<div *ngIf="token == null" class="bckgAuth">
+    <nav>
+      <a [routerLink]="['/login']">Login</a> | 
+      <a href="#">Esqueci a senha</a>
+  </nav>
+</div>
+<div *ngIf="token" class="bckgAuth">
+    <nav>
+        <a [routerLink]="['/aluno']"><!--i class="fa fa-user-circle" aria-hidden="true"></i--><img src="{{ imageURL }}"/> {{ name }}</a> | 
+        <a href="" (click)="logout()"><i class="fa fa-window-close" aria-hidden="true"></i> Sair</a>
+    </nav>
+</div>
+<!--div *ngIf="show; then thenBlock; else elseBlock">this is ignored</div>
+<ng-template #primaryBlock>Primary text to show</ng-template>
+<ng-template #secondaryBlock>Secondary text to show</ng-template>
+<ng-template #elseBlock>Alternate text while primary text is hidden</ng-template-->
+<div class="container">
+<header> 
+  <nav class="principal">
+    <a href="#">Institucional</a> |
+      <a href="#">Como Funciona</a> |
+      <a routerLink="/cadastro">Cadastro</a> |
+      <a routerLink="/professor">Professor</a> |
+      <a routerLink="/aluno">Aluno</a> |
+      <a routerLink="/anunciod">Detalhes Anúncio</a>
+  </nav>
+</header>
+<a [routerLink]="['/']"><img class="imgHeader" src="../assets/img/logo.png"></a>
+</div>
+
+<router-outlet></router-outlet>
+
+<div class="containerFooter">
+  <div id="textFooter">
+      <img class="imgFooter" src="../assets/img/logoFooter.png">
+      <p>Uma plataforma de ensino ligando você ao professor e ao assunto que você realmente precisa!</p>
+      <p>Equipe QueroAulas</p>
+      <nav class="linksEmpresa">
+          <p>Empresa</p>
+          <a href="#"><img src="../assets/img/icone.png"> Empresa</a>
+          <a href="#"><img src="../assets/img/icone.png"> Termos de Uso</a> 
+          <a href="#"><img src="../assets/img/icone.png"> Contato</a> 
+      </nav>
+      <nav class="linksDiversos">
+          <p>Diversos</p>
+          <a href="#"><img src="../assets/img/icone.png"> Institucional</a> 
+          <a href="#"><img src="../assets/img/icone.png"> Como Funciona</a> 
+          <a href="#"><img src="../assets/img/icone.png"> Cadastro</a> 
+          <a href="#"><img src="../assets/img/icone.png"> Professor</a>
+          <a href="#"><img src="../assets/img/icone.png"> Oportunidades</a>
+      </nav>
+  </div>
+</div>

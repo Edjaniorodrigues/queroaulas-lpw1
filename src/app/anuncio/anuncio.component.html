@@ -1,0 +1,32 @@
+<div class="topoBarra">
+    <img class="icnBarra" src="../assets/img/iconeBarra.png">  Anúncios é aqui!
+    <img class="barraHoriz" src="../assets/img/barra_vert.png"/>
+</div>
+<!-- Container -->
+<div class="bckgAnuncio">
+  <div>
+    <h3><i class="fa fa-bullhorn" aria-hidden="true"></i> Faça seu Anúncio de aula!</h3>
+    <!-- Formulário Cadastro Anúncio -->
+    <form class="cadAnuncio" [formGroup]="formAnuncio" (ngSubmit)="salvarAnuncio()">
+        <span class="ui-float-label">
+          <input pInputText type="text" formControlName="assunto" label="Informe o assunto">
+          <label for="float-input">Assunto</label>
+        </span>
+        <p-dropdown [options]="materia" formControlName="matSelecionada" placeholder="Selecione a Matéria"
+         optionLabel="nomeMateria" [style]="{'width':'600px','height':'35px'}">
+        </p-dropdown>
+        <br/>
+        <br/>
+        <span class="ui-float-label">
+          <input pInputText type="text" formControlName="horario" label="Informe qual horário?">
+          <label for="float-input">Horario</label>
+        </span>
+        <span class="ui-float-label">
+          <input type="text" pInputText disabled>
+          <label for="float-input">Valor: {{ val }}</label>
+          <p-slider formControlName="valor" (onSlideEnd)="handleChange($event)" [style]="{'width':'600px'}"></p-slider>
+        </span>
+        <button pButton type="button" class="ui-button-warning" (click)="salvarAnuncio()" label="Anunciar"></button>
+    </form>
+  </div>
+</div>

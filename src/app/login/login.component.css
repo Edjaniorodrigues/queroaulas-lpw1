@@ -1,0 +1,67 @@
+/*-- Containeres Login / Cadastro --*/
+.bckgLoginExterno {
+    background-color: #EBEBEB;
+    padding: 10px 0px 10px 300px;
+    margin: 10px 0px 0px 220px;
+    width: 45%;
+}
+
+.clearfix{
+    margin: 20px 0px 0px 220px;
+    
+}
+
+.clearfix span{
+    margin: 20px 10px 10px 30px;
+}
+
+
+.clearfix p{
+    margin: 20px 10px 30px 35px;
+    color: green;
+    font-size: 1.3em;
+}
+
+.clearfix button{
+    width: 340px;
+    height: 40px;
+    margin: 10px 10px 10px 30px;
+}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column{
+    float: left;
+}
+
+
+.bckgLoginInterno{
+    background-color: #EBEBEB;
+    margin: 20px 10px 10px 0px;
+    width: 430px;
+    height: 300px;
+    float: left;
+    clear: both;  
+}
+
+.cadastro{
+    background-color: #EBEBEB;
+    margin: 20px 0px 10px 20px;
+    width: 430px;
+    height: 300px;
+    clear: right;
+}
+
+.userLogin {
+    margin: 20px 10px 10px 220px;
+    padding: 20px 0px 0px 295px;
+    width: 45%;
+    background-color: lightgray;
+}
+.userLogin p{
+    /*display: inline;*/
+}

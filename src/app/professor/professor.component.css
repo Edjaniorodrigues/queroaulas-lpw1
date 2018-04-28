@@ -1,0 +1,72 @@
+.bckgroundProfessor {
+    background-color: #EBEBEB;
+    margin: 0px 0px 30px 0px;
+    padding: 20px 20px 20px 20px;
+}
+.topoBarra{
+    margin: 30px 0px 0px 0px;
+}
+.topoBarra .icnBarra { 
+    margin-left: 20px;
+    width: 30px;
+    height: 20px;
+    /*clear: left;*/
+}
+
+.topoBarra .barraHoriz{
+    width: 100%;
+    height: 3px;  
+}
+
+.panelAluno{
+    background-color: #1adb44;
+    padding: 20px 0px 0px 40px;
+    height: 260px;
+    border-radius: 5px;
+}
+
+.panelAluno i{
+    margin: 0px 0px 0px 35px;
+    /*color: gray;*/
+}
+
+.panelAluno img{
+    margin: 0px 0px 0px 18px;
+    border-radius: 100px;
+}
+
+.panelDados h5{
+    margin-bottom: -5px;
+    color: green;
+}
+
+.panelDados button{
+    width: 100px;
+}
+
+.panelNotifica h5{
+    margin-bottom: -5px;
+    color: green;
+} 
+
+.panelAnuncio h5{
+    margin-bottom: -5px;
+    color: green;
+}
+
+.panelAluno h5{
+    margin-left: 20px;   
+    /*color: gray; */
+}
+
+.panelAnuncio {
+    margin-left: 25px;
+}
+
+.panelDados{
+    margin-left: 25px;
+}
+.panelNotifica {
+    margin-left: 100px;
+}
+

@@ -1,0 +1,125 @@
+<div class="topoBarra">
+    <img class="icnBarra" src="../assets/img/iconeBarra.png"> Perfil Professor
+    <img class="barraHoriz" src="../assets/img/barra_vert.png" />
+</div>
+<!--Container-->
+<div class="bckgroundProfessor">
+    <!--Container superior-->
+    <div class="ui-g">
+        <!--Painel esquerdo-->
+        <div class="ui-g-2 panelAluno">
+            <img src="{{imageURL}}">
+            <h5>{{ name }}</h5>
+            <h5>Perfil: {{ varPerfil }}</h5>
+        </div>
+        <!--Painel Direito-->
+        <div class="ui-g-8 panelDados">
+            <h5>
+                <i class="fa fa-database" aria-hidden="true"></i> Meus Dados</h5>
+            <img src="../assets/img/barraDivGreen.png">
+            <p>
+                <!--SESSION HABILITADA-->
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">{{ name }}</label>
+                </span>
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">{{ email }}</label>
+                </span>
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">endereço</label>
+                </span>
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">Outra Coisa:</label>
+                </span>
+                <br/>
+                <button pButton class="ui-button-success" [routerLink]="['#']" label="Editar">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
+                <button pButton class="ui-button-success" [routerLink]="['#']" label="Salvar">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                </button>
+            </p>
+        </div>
+        <!--Container inferior-->
+        <div class="ui-g panelNotifica">
+            <!--Painel esquerdo vazio-->
+            <div class="ui-g-2"></div>
+            <!--Painel Direito-->
+            <div class="ui-g-10">
+                <h5>
+                    <i class="fa fa-bell" aria-hidden="true"></i> Minhas Notificações</h5>
+                <img src="../assets/img/barraDivGreen.png">
+                <div>
+                    <h4>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i> Notificação 1:
+                    </h4>
+                    <div>
+                        <h4>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i> Notificação 2:
+                        </h4>
+                        <p>- Rapaz, isso é um texto pra compor ta ligado? está em html</p>
+                    </div>
+                </div>
+            </div>
+            <!--Container central-->
+            <div class="ui-g panelAnuncio">
+                <div class="ui-g-2"></div>
+                <div class="ui-g-10">
+                    <h5><i class="fa fa-bullhorn" aria-hidden="true"></i> Anúncios Recebidos</h5>
+                    <img src="../assets/img/barraDivGreen.png">
+                    <!-- Tabela com Anuncios feitos pelo aluno - p/ professor responder -->
+                    <p-dataTable [value]="relacaoAnuncios" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+                        <!-- Coluna Resposta -->
+                        <p-column field="resposta" header="Resposta" [style]="{'width':'10%'}">
+                            <ng-template let-col let-items="rowData" pTemplate="body">
+                                <button pButton (click)="showDialog(items.id)" class="ui-button-success" label="Aceitar"></button>
+                            </ng-template>
+                        </p-column>
+                        <!-- Coluna Nome do Aluno -->
+                        <p-column field="nomeAluno" header="Nome do Aluno">
+                            <ng-template let-col let-items="rowData" pTemplate="body">
+                                <span>{{ items.user }}</span>
+                            </ng-template>
+                        </p-column>
+                        <!-- Coluna Assunto -->
+                        <p-column field="assunto" header="Assunto">
+                            <ng-template let-col let-items="rowData" pTemplate="body">
+                                <span>{{ items.assunto }}</span>
+                            </ng-template>
+                        </p-column>
+                        <!-- Coluna Categoria / Matéria -->
+                        <p-column field="categoria" header="Categoria">
+                            <ng-template let-col let-items="rowData" pTemplate="body">
+                                <span>{{ items.matSelecionada.nomeMateria }}</span>
+                            </ng-template>
+                        </p-column>
+                        <ng-template pTemplate="paginatorLeft">
+                            <button type="button" pButton icon="fa-refresh"></button>
+                        </ng-template>
+                        <ng-template pTemplate="paginatorRight">
+                            <button type="button" pButton icon="fa-cloud-upload"></button>
+                        </ng-template>
+                    </p-dataTable>
+                    <!--Caixa de Diálogo-->
+                    <form [formGroup]="formRespProf" (ngSubmit)="salvarRespProf()">
+                        <!--div *ngFor="let opaT of relacaoAnuncios">{{ opaT.id }} </div-->
+                        <p-dialog header="Insira o valor da Proposta" [(visible)]="display">
+                            <!--verificar a possibilidade de trabalhar com rotas, pegando o id -->
+                            <br/>Respondendo à: {{ nomeSelected }}
+                            <br/>Respondendo id: {{ idSelected }}
+                            <br/>
+                            <br/>
+                            <br/>Valor:
+                            <input pInputText formControlName="valorResp" type="text">
+                            <button pButton (click)="salvarRespProf(idSelected)" class="ui-button-success" label="Responder"></button>
+                            <br/>
+                        </p-dialog>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

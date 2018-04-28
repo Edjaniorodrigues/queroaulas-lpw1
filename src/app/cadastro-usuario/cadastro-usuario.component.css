@@ -1,0 +1,52 @@
+#sec1{  
+	margin-top: 20px;
+
+}
+
+.divs{
+	background-color: #EBEBEB;
+	border: solid 1px green;
+
+}
+
+input{
+	border: solid 1px green;
+	width: 500px;
+	height: 25px;
+
+}
+
+.radiobutton{
+	width: 15px;
+	height: 15px;
+
+}
+
+label{
+	font-style: normal; 
+}
+
+#logo{
+	position: static;
+	width: 216;
+	height: 58;
+}
+
+button{
+	background-color: #008000;
+	color: white;
+
+}
+
+#rodape{
+	height: 200px;
+	background-color: black; 
+
+}
+
+h4{
+	color: white;
+
+}
+
+

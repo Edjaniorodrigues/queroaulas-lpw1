@@ -1,0 +1,51 @@
+
+    <!-- Login / Cadastro -->
+<div class="bckgLoginExterno">
+  <p>Logar com:</p>
+    <!-- Facebook --> 
+    <button  (click)="loginFb()" class="btn btn-lg btn-primary btn-block">Login facebook</button> ||
+  <!-- Google -->
+  <button *ngIf="!token" id="google-login-button" class="btn btn-primary" (click)="googleAuthenticate()">Google</button>
+</div>
+<div class="clearfix">
+    <div class="column bckgLoginInterno">   
+      <form #f="ngForm" (submit)="form_login(f)">
+        <p>Já possuo cadastro:</p>
+        <span class="ui-float-label">
+          <input id="float-input" type="text" size="40" required ngModel name="email" pInputText>
+          <label for="float-input">email</label>
+        </span>
+        <span class="ui-float-label">
+          <input id="float-input" type="password" size="40" required ngModel name="senha" pInputText>
+          <label for="float-input">senha</label>
+        </span>
+        <button pButton type="submit"  class="ui-button-success" label="Acessar"></button>
+      </form>
+    </div>
+      <div class="column cadastro">
+      <form>
+        <p>Sou novo aqui! ;) Vamos começar?</p>
+          <span class="ui-float-label">
+            <input id="float-input" type="text" size="40" pInputText>
+            <label for="float-input">email</label>
+          </span>
+          <button pButton type="button" [routerLink]="['/']" class="ui-button-success" label="Cadastrar"></button>
+      </form>
+    </div> 
+  </div>
+  <div class="userLogin">
+      <section class="google-login-page">
+          <div  *ngIf="token">
+          <img src="{{imageURL}}">
+          <!--br>
+          <b>TOKEN: </b>
+          <p>{{token}}</p-->
+          <!--b>NAME: </b-->
+          <p>{{name}}</p>
+          <!--b>EMAIL: </b-->
+          <p>{{email}}</p>
+          <button type="button" (click)="logout()">Sair</button>
+        </div>
+        <br/>
+      </section>
+    </div>

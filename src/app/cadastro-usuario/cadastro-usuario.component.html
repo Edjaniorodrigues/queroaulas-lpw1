@@ -1,0 +1,84 @@
+
+
+
+<script type="text/javascript">
+	function validar(){
+		if(document.form.nome==""){
+			alert("Formulário Inválido");
+			return false;
+		}
+
+		else if(document.form.email==""){
+			alert("Formulário Inválido");
+			return false;
+		}
+
+		else if(document.form.senha==""){
+			alert("Formulário Inválido");
+			return false;
+		}
+	}
+
+	function usuarioCadastrado(){
+		alert("Usuário Cadastrado com Sucesso");
+	}
+
+	function enablearea(){
+		document.getElementById('area').disabled = false;
+	}
+
+	function disabledarea(){
+		document.getElementById('area').disabled = true;
+	}
+
+</script>
+
+<br>
+
+<div class="divs">
+	<section id="sec1">
+		<form name="form" id="form" action="">
+			<label>Nome</label>
+			<br>
+            <input type="text" id="nome" name="nome" maxlength="50" required="true" placeholder="Nome e Sobrenome" [(ngModel)]="usuario.nome"
+            #nome="ngModel">
+			<p></p>
+		
+			<label>Email</label>
+			<br>
+            <input type="email" name="email" required="" placeholder="seuemail@email.com.br" [(ngModel)]="usuario.email"
+            #nome="ngModel">
+			<p></p>
+
+			<label>Senha</label>
+			<br>
+            <input type="password" name="senha" required="" placeholder="8 caracteres" [(ngModel)]="usuario.senha"
+            #senha="ngModel">
+			<p></p>
+
+			<label>Função</label>
+			<br>
+		
+            <p-radioButton name="groupname" value="aluno" label="Aluno" [(ngModel)]="usuario.perfil" 
+            id="aluno" #aluno="ngModel" (click)="perfil()"></p-radioButton>
+            
+            <p-radioButton name="groupname" value="professor" label="Professor" [(ngModel)]="usuario.perfil"
+            id="professor"  #professor="ngModel" (click)="perfil()"></p-radioButton>
+			
+			<p></p>
+
+			<label>Área de atuação</label>
+			<br>
+			<input type="text" id="area" placeholder="Informe a Área de Atuação" required="">
+			<p></p>
+
+			<button id="botao" value="botao" (click)="salvar()">Cadastrar</button>
+			<p></p>
+		</form>
+	</section>
+</div>
+<p></p>
+
+
+
+

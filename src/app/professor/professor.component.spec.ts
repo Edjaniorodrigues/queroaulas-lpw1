@@ -1,0 +1,28 @@
+import { RespostaProf } from './../models/respostaProf';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { AnuncioPersistenciaService } from './../anuncio-persistencia.service';
+import { ProfessorComponent } from './professor.component';
+
+
+describe('ProfessorComponent', () => {
+  let component: ProfessorComponent;
+  let fixture: ComponentFixture<ProfessorComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ ProfessorComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ProfessorComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should be created', () => {
+    expect(component).toBeTruthy();
+  });
+});

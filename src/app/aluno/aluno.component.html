@@ -1,0 +1,103 @@
+<div class="topoBarra">
+    <img class="icnBarra" src="../assets/img/iconeBarra.png"> Perfil Aluno
+    <img class="barraHoriz" src="../assets/img/barra_vert.png" />
+</div>
+<div class="bckgroundAluno">
+    <div class="ui-g">
+        <div class="ui-g-2 panelAluno">
+            <img src="{{imageURL}}">
+            <h5>{{ name }}</h5>
+            <h5>Perfil: {{ varPerfil }}</h5>
+            <button pButton class="ui-button-warning" [routerLink]="['/anuncio']" label="Novo Anúncio"></button>
+        </div>
+        <!-- Painel Perfil Aluno -->
+        <div class="ui-g-8 panelDados">
+            <h5>
+                <i class="fa fa-database" aria-hidden="true"></i> Meus Dados</h5>
+            <img src="../assets/img/barraDivGreen.png">
+            <p>
+                <!--SESSION HABILITADA-->
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">{{name}}</label>
+                </span>
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">{{email}}</label>
+                </span>
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">endereço</label>
+                </span>
+                <span class="ui-float-label">
+                    <input pInputText type="text" id="float-input" size="30" disabled/>
+                    <label for="float-input">Outra Coisa:</label>
+                </span>
+                <br/>
+                <button pButton class="ui-button-success" [routerLink]="['#']" label="Editar">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
+                <button pButton class="ui-button-success" [routerLink]="['#']" label="Salvar">
+                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                </button>
+            </p>
+        </div>
+        <!--Painel Notificações-->
+        <div class="ui-g panelNotifica">
+            <div class="ui-g-2"></div>
+            <div class="ui-g-10">
+                <h5>
+                    <i class="fa fa-bell" aria-hidden="true"></i> Minhas Notificações</h5>
+                <img src="../assets/img/barraDivGreen.png">
+                <div>
+                    <h4>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i> Notificação 1:</h4>
+                    <p>- Rapaz, isso é um texto pra compor ta ligado? está em html</p>
+                    <button pButton (click)="listarTodos()" label="listar"></button>
+                </div>
+                <div>
+                    <h4>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i> Notificação 2:</h4>
+                    <p>- Rapaz, isso é um texto pra compor ta ligado? está em html</p>
+                </div>
+            </div>
+        </div>
+        <!-- Painel Anúncio -->
+        <div class="ui-g panelAnuncio">
+            <!-- Painel esquerdo vazio -->
+            <div class="ui-g-2"></div>
+            <!-- Painel direito -->
+            <div class="ui-g-10">
+                <h5><i class="fa fa-bullhorn" aria-hidden="true"></i> Meus Anúncios Enviados</h5>
+                <img src="../assets/img/barraDivGreen.png">
+                <!-- Tabela com Anuncios feitos -->
+                <p-dataTable [value]="relacaoAnuncios" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+                    <p-header>Seus Anúncios - Quero Aulas</p-header>
+                    <p-column field="assunto" header="Assunto">
+                        <ng-template let-col let-items="rowData" pTemplate="body">
+                            <span>
+                                <a [routerLink]="['/anunciod', items.id]">{{items.assunto}}</a>
+                            </span>
+                        </ng-template>
+                    </p-column>
+                    <p-column field="categoria" header="Categoria / Matéria">
+                        <ng-template let-col let-items="rowData" pTemplate="body">
+                            <span *ngIf="items.matSelecionada != null">{{ items.matSelecionada.nomeMateria }}</span>
+                        </ng-template>
+                    </p-column>
+                    <p-column field="status" header="Status">
+                        <ng-template let-col let-items="rowData" pTemplate="body">
+                            <span>{{items.status}}</span>
+                        </ng-template>
+                    </p-column>
+                    <ng-template pTemplate="paginatorLeft">
+                        <!--button type="button" pButton icon="fa-refresh"></button-->
+                    </ng-template>
+                    <ng-template pTemplate="paginatorRight">
+                        <!---button type="button" pButton icon="fa-cloud-upload"></button-->
+                    </ng-template>
+                </p-dataTable>
+            </div>
+        </div>
+    </div>
+</div>
